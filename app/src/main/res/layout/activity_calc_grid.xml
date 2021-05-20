@@ -15,10 +15,10 @@
 
 
         <EditText
-            android:id="@+id/editTextNumberDecimal2"
+            android:id="@+id/console"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="24"
             android:hint="@string/_console"
             android:inputType="numberDecimal" />
 
