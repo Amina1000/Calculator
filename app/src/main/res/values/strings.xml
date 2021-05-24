@@ -15,7 +15,10 @@
     <string name="_multiply">*</string>
     <string name="_divide">/</string>
     <string name="_result">=</string>
-    <string name="_clear">C</string>
+    <string name="_clear_one">ce</string>
+    <string name="_clear_all">ac</string>
+    <string name="_percent">%</string>
     <string name="_point">.</string>
+    <string name="_load">loading…</string>
     <string name="_console">console</string>
 </resources>
