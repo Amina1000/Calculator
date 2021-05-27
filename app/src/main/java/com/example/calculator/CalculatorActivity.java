@@ -7,7 +7,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Calculator extends AppCompatActivity {
+public class CalculatorActivity extends AppCompatActivity {
 
     private DataCalculator dataCalculator;
     private EditText console;
@@ -26,29 +26,29 @@ public class Calculator extends AppCompatActivity {
         // на оператор switch платформа ругалась, но код был компактнее.
         int id = view.getId();
         if (id == R.id.button_point) {
-            dataCalculator.setConsole_expression('.');
+            dataCalculator.setConsoleExpression('.');
         } else if (id == R.id.button_0) {
-            dataCalculator.setConsole_expression('0');
+            dataCalculator.setConsoleExpression('0');
         } else if (id == R.id.button_1) {
-            dataCalculator.setConsole_expression('1');
+            dataCalculator.setConsoleExpression('1');
         } else if (id == R.id.button_2) {
-            dataCalculator.setConsole_expression('2');
+            dataCalculator.setConsoleExpression('2');
         } else if (id == R.id.button_3) {
-            dataCalculator.setConsole_expression('3');
+            dataCalculator.setConsoleExpression('3');
         } else if (id == R.id.button_4) {
-            dataCalculator.setConsole_expression('4');
+            dataCalculator.setConsoleExpression('4');
         } else if (id == R.id.button_5) {
-            dataCalculator.setConsole_expression('5');
+            dataCalculator.setConsoleExpression('5');
         } else if (id == R.id.button_6) {
-            dataCalculator.setConsole_expression('6');
+            dataCalculator.setConsoleExpression('6');
         } else if (id == R.id.button_7) {
-            dataCalculator.setConsole_expression('7');
+            dataCalculator.setConsoleExpression('7');
         } else if (id == R.id.button_8) {
-            dataCalculator.setConsole_expression('8');
+            dataCalculator.setConsoleExpression('8');
         } else if (id == R.id.button_9) {
-            dataCalculator.setConsole_expression('9');
+            dataCalculator.setConsoleExpression('9');
         }
-        console.setText(dataCalculator.getConsole_expression());
+        console.setText(dataCalculator.getConsoleExpression());
     }
 
     public void calcOperation(View view) {
@@ -68,6 +68,6 @@ public class Calculator extends AppCompatActivity {
         } else if (id == R.id.button_result) {
             dataCalculator.calculate_expression(Operations.RESULT);
         }
-        console.setText(dataCalculator.getConsole_expression());
+        console.setText(dataCalculator.getConsoleExpression());
     }
 }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ProgressBar progressBar = findViewById(R.id.progressBar1);
-        Intent intent = new Intent(this, Calculator.class);
+        Intent intent = new Intent(this, CalculatorActivity.class);
         for (int i = 0; i < 10; i++) {
             increment = i;
             progressBar.setProgress(increment);

@@ -15,15 +15,15 @@ import java.math.MathContext;
  */
 public class DataCalculator implements Parcelable {
     private BigDecimal result;
-    private StringBuilder console_expression;
-    Operations last_operations;
+    private StringBuilder consoleExpression;
+    Operations lastOperations;
 
     private boolean reset;
 
     protected DataCalculator(Parcel in) {
-        console_expression = new StringBuilder(in.readString());
+        consoleExpression = new StringBuilder(in.readString());
         result = new BigDecimal(in.readString());
-        last_operations= Operations.valueOf(in.readString());
+        lastOperations = Operations.valueOf(in.readString());
         reset = in.readByte() != 0;
     }
 
@@ -33,22 +33,26 @@ public class DataCalculator implements Parcelable {
 
     public void clearAll() {
         result = BigDecimal.ZERO;
-        console_expression = new StringBuilder('0');
+        consoleExpression = new StringBuilder('0');
         reset = true;
-        last_operations = Operations.RESULT;
+        lastOperations = Operations.RESULT;
     }
 
     public void cleanOne() {
-        int length = console_expression.length();
+        int length = consoleExpression.length();
         if (length > 1) {
-            console_expression.deleteCharAt(length - 1);
+            consoleExpression.deleteCharAt(length - 1);
         } else {
-            console_expression = new StringBuilder('0');
+            consoleExpression = new StringBuilder('0');
         }
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(consoleExpression.toString());
+        dest.writeString(result.toString());
+        dest.writeString(lastOperations.toString());
+        dest.writeByte((byte) (reset ? 0 : 1));
     }
 
     @Override
@@ -68,33 +72,33 @@ public class DataCalculator implements Parcelable {
         }
     };
 
-    public String getConsole_expression() {
-        return console_expression.toString();
+    public String getConsoleExpression() {
+        return consoleExpression.toString();
     }
 
-    public void setConsole_expression(char symbol) {
+    public void setConsoleExpression(char symbol) {
         if (reset) {
-            this.console_expression = new StringBuilder();
-            console_expression.append(symbol);
+            this.consoleExpression = new StringBuilder();
+            consoleExpression.append(symbol);
             reset = false;
         } else {
-            this.console_expression.append(symbol);
+            this.consoleExpression.append(symbol);
         }
     }
 
     public void calculate_expression(Operations opr) {
 
         if (reset) {
-            last_operations = opr;
+            lastOperations = opr;
         } else {
-            calculate(new BigDecimal(console_expression.toString()));
-            last_operations = opr;
+            calculate(new BigDecimal(consoleExpression.toString()));
+            lastOperations = opr;
             reset = true;
         }
     }
 
     private void calculate(BigDecimal number){
-        switch (last_operations) {
+        switch (lastOperations) {
             case PERCENT:break;
             case DIVIDE:result = (number.compareTo(BigDecimal.ZERO) == 0) ? BigDecimal.ZERO :result.divide(number, MathContext.DECIMAL32);break;
             case MULTIPLY:result = result.multiply(number);break;
@@ -105,7 +109,7 @@ public class DataCalculator implements Parcelable {
         if (result.compareTo(BigDecimal.ZERO) == 0) {
             result = BigDecimal.ZERO;
         }
-        console_expression = new StringBuilder(result.toString());
+        consoleExpression = new StringBuilder(result.toString());
 
     }
 
