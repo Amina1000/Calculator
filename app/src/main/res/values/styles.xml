@@ -5,7 +5,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/margin</item>
         <item name="android:textSize">@dimen/button_text</item>
-        <item name="cornerRadius">18dp</item>
+        <item name="cornerRadius">@dimen/radius_button</item>
         <item name="backgroundTint">@color/number_button</item>
     </style>
     <style name="calc_operation_button_style" parent="calc_number_button_style">
