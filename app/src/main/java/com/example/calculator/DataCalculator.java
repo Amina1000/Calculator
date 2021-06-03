@@ -16,14 +16,14 @@ import java.math.MathContext;
 public class DataCalculator implements Parcelable {
     private BigDecimal result;
     private StringBuilder consoleExpression;
-    Operations lastOperations;
+    Operations lastOperation;
 
     private boolean reset;
 
     protected DataCalculator(Parcel in) {
         consoleExpression = new StringBuilder(in.readString());
         result = new BigDecimal(in.readString());
-        lastOperations = Operations.valueOf(in.readString());
+        lastOperation = Operations.valueOf(in.readString());
         reset = in.readByte() != 0;
     }
 
@@ -35,7 +35,7 @@ public class DataCalculator implements Parcelable {
         result = BigDecimal.ZERO;
         consoleExpression = new StringBuilder('0');
         reset = true;
-        lastOperations = Operations.RESULT;
+        lastOperation = Operations.RESULT;
     }
 
     public void cleanOne() {
@@ -51,7 +51,7 @@ public class DataCalculator implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(consoleExpression.toString());
         dest.writeString(result.toString());
-        dest.writeString(lastOperations.toString());
+        dest.writeString(lastOperation.toString());
         dest.writeByte((byte) (reset ? 0 : 1));
     }
 
@@ -89,16 +89,16 @@ public class DataCalculator implements Parcelable {
     public void calculate_expression(Operations opr) {
 
         if (reset) {
-            lastOperations = opr;
+            lastOperation = opr;
         } else {
             calculate(new BigDecimal(consoleExpression.toString()));
-            lastOperations = opr;
+            lastOperation = opr;
             reset = true;
         }
     }
 
     private void calculate(BigDecimal number){
-        switch (lastOperations) {
+        switch (lastOperation) {
             case PERCENT:break;
             case DIVIDE:result = (number.compareTo(BigDecimal.ZERO) == 0) ? BigDecimal.ZERO :result.divide(number, MathContext.DECIMAL32);break;
             case MULTIPLY:result = result.multiply(number);break;

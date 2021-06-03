@@ -12,4 +12,11 @@
         <item name="android:textColor">@color/black</item>
         <item name="backgroundTint">@color/operation_button</item>
     </style>
+
+    <style name="styles_land" parent="calc_number_button_style">
+        <item name="android:textSize">@dimen/button_text_land</item>
+        <item name="cornerRadius">@dimen/radius_button</item>
+        <item name="backgroundTint">@color/teal_700</item>
+        <item name="android:layout_margin">@dimen/margin_land</item>
+    </style>
 </resources>
