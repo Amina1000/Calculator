@@ -26,92 +26,77 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_minus"
                 style="@style/styles_land"
-                android:onClick="calcOperation"
                 android:text="@string/_minus" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_plus"
                 style="@style/styles_land"
-                android:onClick="calcOperation"
                 android:text="@string/_plus" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_multiply"
                 style="@style/styles_land"
-                android:onClick="calcOperation"
                 android:text="@string/_multiply" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_divide"
                 style="@style/styles_land"
-                android:onClick="calcOperation"
                 android:text="@string/_divide" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_percent"
                 style="@style/styles_land"
-                android:onClick="calcOperation"
                 android:text="@string/_percent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_ce"
                 style="@style/styles_land"
                 android:layout_row="0"
-                android:onClick="calcOperation"
                 android:text="@string/_clear_one" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_1"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_1" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_2"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_2" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_3"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_3" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_4"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_4" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_ac"
                 style="@style/styles_land"
-                android:onClick="calcOperation"
                 android:text="@string/_clear_all" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_5"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_5" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_6"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_6" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_7"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_7" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_8"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_8" />
 
             <com.google.android.material.button.MaterialButton
@@ -119,25 +104,21 @@
                 style="@style/styles_land"
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill"
-                android:onClick="calcOperation"
                 android:text="@string/_result" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_point"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_point" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_9"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_9" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_0"
                 style="@style/styles_land"
-                android:onClick="setNumberOperation"
                 android:text="@string/_0" />
 
             <com.google.android.material.button.MaterialButton
